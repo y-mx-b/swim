@@ -13,7 +13,7 @@ int main(void) {
         CFStringRef cf_title = get_window_title(w);
         char       *title    = cstring_from_CFString(cf_title);
         char       *app_name =
-                cstring_from_CFString(get_application_name((get_window_application(w))));
+                cstring_from_CFString(get_application_name(get_window_application(w)));
         CGRect frame = get_window_frame(w);
 
         printf("Window Number: %d\n", i);
