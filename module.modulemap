@@ -1,4 +1,5 @@
 module swim [system] {
 		header "./include/swim.h"
+		link "lib/libswim.a"
 		export *
 }
