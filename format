@@ -1,0 +1,4 @@
+#!/bin/sh
+
+find ./src -type f | xargs clang-format -i
+find ./test -type f | xargs clang-format -i

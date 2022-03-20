@@ -20,9 +20,8 @@ WindowList get_window_list(WindowListOptions options, window *w) {
     if (w != NULL) { relative_window = get_window_id(w); }
 
     // get window information
-    CFArrayRef cf_window_dicts =
-            CGWindowListCopyWindowInfo(cf_options, relative_window);
-    CFIndex window_count = CFArrayGetCount(cf_window_dicts);
+    CFArrayRef cf_window_dicts = CGWindowListCopyWindowInfo(cf_options, relative_window);
+    CFIndex    window_count    = CFArrayGetCount(cf_window_dicts);
 
     WindowList window_list = {
             .count    = 0,

@@ -15,12 +15,14 @@ CGWindowID window_id_from_CFNumber(CFNumberRef cf_window_id) {
 
 char *cstring_from_CFString(CFStringRef cf_string) {
     CFIndex length = CFStringGetLength(cf_string);
-    CFIndex size = CFStringGetMaximumSizeForEncoding(length, kCFStringEncodingUTF8);
+    CFIndex size   = CFStringGetMaximumSizeForEncoding(length, kCFStringEncodingUTF8);
     CFIndex used_size;
-    CFRange range = CFRangeMake(0, length);
-    char *string = malloc(size);
+    CFRange range  = CFRangeMake(0, length);
+    char   *string = malloc(size);
 
-    CFStringGetBytes(cf_string, range, kCFStringEncodingUTF8, '?', false, (unsigned char *) string, size - 1, &used_size);
+    CFStringGetBytes(
+            cf_string, range, kCFStringEncodingUTF8, '?', false, (unsigned char *) string,
+            size - 1, &used_size);
     string[used_size] = '\0';
     return string;
 }
