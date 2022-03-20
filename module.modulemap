@@ -1,0 +1,3 @@
+module swim {
+		header "./include/swim.h"
+}
