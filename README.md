@@ -1,6 +1,6 @@
 # swim
 
-A Simple WIndow Management library written in C.
+A simple window management library written in C.
 
 ## Goals:
 - Simple, consistent, barebones API
