@@ -3,11 +3,6 @@
 #include <CoreVideo/CVPixelBuffer.h>
 #include <stdbool.h>
 
-// true --> has permission
-// false --> doesn't
-
-// required to access accessibility API's
-// moving windows, getting certain information, etc.
 bool request_accessibility_permissions() {
     bool                       result          = false;
     CFDictionaryKeyCallBacks   key_callbacks   = kCFTypeDictionaryKeyCallBacks;
@@ -28,8 +23,6 @@ bool request_accessibility_permissions() {
     return result;
 }
 
-// required for for certain features
-// window titles + showing windows (PIP for arbitrary window planned)
 bool request_screen_recording_permissions() {
     CGDisplayStreamRef stream = NULL;
     stream                    = CGDisplayStreamCreate(

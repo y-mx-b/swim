@@ -3,13 +3,12 @@
 #include <AvailabilityMacros.h>
 #include <CoreFoundation/CoreFoundation.h>
 
-struct application {
+struct _application {
     AXUIElementRef ax_app;
     pid_t          pid;
     CFStringRef    name;
 };
 
-// create application
 application *_create_application(AXUIElementRef ax_app, pid_t pid, CFStringRef name) {
     application *app = (application *) malloc(sizeof(application));
 
@@ -19,6 +18,7 @@ application *_create_application(AXUIElementRef ax_app, pid_t pid, CFStringRef n
 
     return app;
 }
+
 application *create_application(pid_t pid) {
     AXUIElementRef ax_app = AXUIElementCreateApplication(pid);
 
@@ -40,7 +40,7 @@ bool applications_equal(application *a1, application *a2) {
     return false;
 }
 
-// get application properties
+// GET APPLICATION PROPERTIES
 AXUIElementRef get_application_AXUIElement(application *app) {
     return app->ax_app;
 }
@@ -53,7 +53,7 @@ pid_t get_application_pid(application *app) {
     return app->pid;
 }
 
-// deinit
+// DEINIT
 void destroy_application(application *app) {
     CFRelease(app->name);
     CFRelease(app->ax_app);

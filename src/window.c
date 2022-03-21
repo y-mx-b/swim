@@ -2,7 +2,7 @@
 #include <ApplicationServices/ApplicationServices.h>
 #include <CoreFoundation/CoreFoundation.h>
 
-struct window {
+struct _window {
     application   *app;
     AXUIElementRef ax_window;
     CGWindowID     id;
@@ -11,8 +11,6 @@ struct window {
     CFStringRef title;
 };
 
-
-// create new window struct
 window *_create_window(
         application *app, AXUIElementRef ax_window, CGWindowID id, CGRect frame,
         CFStringRef title) {
@@ -85,7 +83,6 @@ AXUIElementRef _get_matching_window_AXUIElementRef(
     return ax_window;
 }
 
-// return NULL if fail
 window *window_from_CFDictionary(CFDictionaryRef window_dict) {
     window *new_window = NULL;
 
@@ -155,7 +152,7 @@ bool windows_equal(window *w1, window *w2) {
     return false;
 }
 
-// Get window properties
+// GET WINDOW PROPERTIES
 AXUIElementRef get_window_AXUIElementRef(window *window) {
     return window->ax_window;
 }
@@ -176,7 +173,7 @@ CGRect get_window_frame(window *window) {
     return window->frame;
 }
 
-// deinit
+// DEINIT
 void destroy_window(window *window) {
     if (window->app != NULL) { destroy_application(window->app); }
     // if (window->ax_window != NULL) { CFRelease(window->ax_window); }
