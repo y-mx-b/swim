@@ -20,7 +20,11 @@ Documentation is generated with doxygen.
 doxygen
 ```
 
+<<<<<<< HEAD
 To browse the documentation locally, open the file html/index.html in your
+=======
+To browse the documentation locally, open the file `docs/index.htm` in your
+>>>>>>> 7421110 (Updated README)
 preferred browser.
 
 ## TODO
