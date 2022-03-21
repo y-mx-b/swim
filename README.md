@@ -10,11 +10,14 @@ A simple window management library written in C. Check the
 
 ## Documentation
 
-Documentation is to be generated with `doxygen`.
+Documentation is generated with `doxygen`.
 
 ```sh
 doxygen
 ```
+
+To browse the documentation locally, open the file `html/index.html` in your
+preferred browser.
 
 ## TODO
 
