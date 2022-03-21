@@ -6,6 +6,7 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include <CoreGraphics/CoreGraphics.h>
 
+/// @internal
 /// @brief Retrieve a PID from a CFNumberRef.
 ///
 /// This function is intended solely for internal use. There should be no
@@ -15,6 +16,7 @@
 /// @return Returns the PID.
 pid_t pid_from_CFNumber(CFNumberRef cf_pid);
 
+/// @internal
 /// @brief Retrieve a window ID from a CFNumberRef.
 ///
 /// This function is intended solely for internal use. There should be no
