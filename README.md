@@ -10,6 +10,9 @@ A simple window management library written in C. Check the
 
 ## Documentation
 
+You can browse the documentation online at https://y-mx-b.github.io/swim/ or
+you can browse it locally.
+
 Documentation is generated with `doxygen`.
 
 ```sh
