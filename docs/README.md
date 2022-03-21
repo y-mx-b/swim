@@ -1,13 +1,5 @@
 # Swim Documentation
 
-## Table of Contents
-- [Permissions](https://github.com/y-mx-b/swim/blob/master/docs/Permissions.md)
-- [Window Manager](https://github.com/y-mx-b/swim/blob/master/docs/Window%20Manager.md)
-- [Window](https://github.com/y-mx-b/swim/blob/master/docs/Window.md)
-- [Application](https://github.com/y-mx-b/swim/blob/master/docs/Application.md)
-- [Modal](https://github.com/y-mx-b/swim/blob/master/docs/Modal.md)
-- [Utilities](https://github.com/y-mx-b/swim/blob/master/docs/Utilities.md)
-
 ## Overview
 
 Let's take a look at a simple sample application.
