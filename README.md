@@ -25,7 +25,7 @@ preferred browser.
 
 ## TODO
 
- - [X] Write documentation (Doxygen comments + proper documentation)
- - [ ] Implement window movement and resizing
- - [ ] Implement grid-based resizing (maybe?)
- - [ ] Implement modal drawing support
+- [x] Write documentation (Doxygen comments + proper documentation)
+- [ ] Implement window movement and resizing
+- [ ] Implement grid-based resizing (maybe?)
+- [ ] Implement modal drawing support

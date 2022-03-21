@@ -1,4 +1,8 @@
 #!/bin/sh
 
+# format C source files
 find ./src -type f | xargs clang-format -i
 find ./test -type f | xargs clang-format -i
+
+# format markdown files
+mdformat README.md md
