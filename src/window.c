@@ -29,6 +29,7 @@ AXUIElementRef _get_matching_window_AXUIElementRef(
         AXUIElementRef app, CFStringRef window_title, CGRect window_frame) {
     AXUIElementRef ax_window = NULL;
 
+    // get list of application windows
     CFArrayRef ax_windows = NULL;
     AXUIElementCopyAttributeValue(app, kAXWindowsAttribute, (CFTypeRef *) &ax_windows);
     if (ax_windows == NULL) { return NULL; }
@@ -37,8 +38,10 @@ AXUIElementRef _get_matching_window_AXUIElementRef(
         CFRelease(ax_windows);
         return NULL;
     }
+
     bool match_found = false;
 
+    // get window title & frame for comparison
     CFStringRef title;
     CGRect      frame;
     for (int i = 0; i < count; i++) {
@@ -69,6 +72,7 @@ AXUIElementRef _get_matching_window_AXUIElementRef(
             continue;
         }
 
+        CFRetain(ax_window);
         match_found = true;
         break;
     }
@@ -79,7 +83,6 @@ AXUIElementRef _get_matching_window_AXUIElementRef(
         return NULL;
     }
 
-    // TODO figure out a way to return a copy
     return ax_window;
 }
 
@@ -176,7 +179,7 @@ CGRect get_window_frame(window *window) {
 // DEINIT
 void destroy_window(window *window) {
     if (window->app != NULL) { destroy_application(window->app); }
-    // if (window->ax_window != NULL) { CFRelease(window->ax_window); }
+    if (window->ax_window != NULL) { CFRelease(window->ax_window); }
     if (window->title != NULL) { CFRelease(window->title); }
     free(window);
 }

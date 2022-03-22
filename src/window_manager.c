@@ -47,5 +47,18 @@ WindowList get_window_list(WindowListOptions options, window *w) {
     return window_list;
 }
 
-// TODO implment this
-void set_window_frame(window *window, CGRect new_frame) { }
+void _set_window_size(AXUIElementRef ax_window, CGSize *size) {
+    AXValueRef ax_size = AXValueCreate(kAXValueCGSizeType, size);
+    AXUIElementSetAttributeValue(ax_window, kAXSizeAttribute, ax_size);
+}
+
+void _set_window_position(AXUIElementRef ax_window, CGPoint *position) {
+    AXValueRef ax_position = AXValueCreate(kAXValueCGPointType, position);
+    AXError error = AXUIElementSetAttributeValue(ax_window, kAXPositionAttribute, ax_position);
+}
+
+void set_window_frame(window *window, CGRect new_frame) {
+    AXUIElementRef ax_window = get_window_AXUIElementRef(window);
+    _set_window_size(ax_window, &new_frame.size);
+    _set_window_position(ax_window, &new_frame.origin);
+}
