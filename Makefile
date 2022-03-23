@@ -5,21 +5,29 @@ FRAMEWORKS=-framework CoreFoundation -framework ApplicationServices -framework C
 SRC=$(wildcard src/*.c)
 OBJ=$(SRC:src/%.c=.build/build_artifacts/%.o)
 
-# tests
-window_information: libswim.a $(OBJ) .build/tests
-				$(CC) $(CFLAGS) $(FRAMEWORKS) test/window_information.c lib/* -o .build/tests/window_information
+TEST_SRC=$(wildcard test/*.c)
+TEST_EXEC=$(TEST_SRC:test/%.c=.build/tests/%)
 
-set_window_frame: libswim.a $(OBC) .build/tests
-				$(CC) $(CFLAGS) $(FRAMEWORKS) test/set_window_frame.c lib/* -o .build/tests/set_window_frame
 
+### TESTS
+tests: .build/tests $(TEST_EXEC)
+
+.build/tests/%: lib/libswim.a $(OBJ) test/%.c
+				$(CC) $(CFLAGS) $(FRAMEWORKS) $^ -o $@
+
+
+### LIBS
 # library
-libswim.a: lib .build/build_artifacts $(OBJ)
-				ar rcs lib/$@ .build/build_artifacts/*.o
+lib/libswim.a: lib .build/build_artifacts $(OBJ)
+				ar rcs $@ .build/build_artifacts/*.o
 
-lib:
-				mkdir lib
 
-# build directory
+### OBJ
+.build/build_artifacts/%.o: src/%.c
+				$(CC) $(CFLAGS) $(FRAMEWORKS) -c $^ -o $@
+
+
+### FILE SETUP
 .build:
 				mkdir .build
 
@@ -28,14 +36,10 @@ lib:
 
 .build/tests: .build
 				mkdir .build/tests
+lib:
+				mkdir lib
 
-# source files
-.build/build_artifacts/%.o: src/%.c
-				$(CC) $(CFLAGS) $(FRAMEWORKS) -c $^ -o $@
 
-# build tests
-# .build/tests/%: libswim.a $(OBJ) .build/tests test/%.c
-# 				$(CC) $(CFLAGS) $(FRAMEWORKS) lib/* $^ -o $@
-
+### MISC
 clean:
 				rm -r .build lib
