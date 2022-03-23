@@ -41,6 +41,6 @@ pid_t get_application_pid(application *app);
 
 /// @brief Free the application struct and its contents.
 /// @param app The application to remove from memory.
-void destroy_application();
+void destroy_application(application *app);
 
 #endif
