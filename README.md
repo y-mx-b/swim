@@ -29,3 +29,5 @@ preferred browser.
 - [X] Implement window movement and resizing
 - [ ] Implement grid-based resizing (maybe?)
 - [ ] Implement modal drawing support
+- [ ] Improve memory usage, make application objects global
+  - [ ] Use a table to store open applications?
