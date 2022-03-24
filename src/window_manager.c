@@ -5,7 +5,7 @@
 // #include <ApplicationServices/ApplicationServices.h>
 // #include <AvailabilityMacros.h>
 
-WindowList get_window_list(WindowListOptions options, window *w) {
+window_list get_window_list(window_list_options options, window *w) {
     // set options
     CGWindowListOption cf_options =
             (kCGWindowListOptionAll * options.all)
@@ -23,7 +23,7 @@ WindowList get_window_list(WindowListOptions options, window *w) {
     CFArrayRef cf_window_dicts = CGWindowListCopyWindowInfo(cf_options, relative_window);
     CFIndex    window_count    = CFArrayGetCount(cf_window_dicts);
 
-    WindowList window_list = {
+    window_list window_list = {
             .count    = 0,
             .capacity = window_count,
             .windows  = malloc(sizeof(pointer_t) * window_count),

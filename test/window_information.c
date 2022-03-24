@@ -1,12 +1,12 @@
 #include "../include/swim.h"
 
 int main(void) {
-    WindowListOptions options = {
+    window_list_options options = {
             .exclude_desktop_elements = true,
             .on_screen_only           = true,
     };
 
-    WindowList window_list = get_window_list(options, NULL);
+    window_list window_list = get_window_list(options, NULL);
 
     for (int i = 0; i < window_list.count; i++) {
         window     *w        = window_list.windows[i];

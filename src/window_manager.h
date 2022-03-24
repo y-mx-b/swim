@@ -6,7 +6,7 @@
 
 #include "./window.h"
 
-/// @struct WindowListOptions
+/// @struct window_list_options
 /// @brief A struct specifying the options to use when retrieving a list of
 /// windows.
 ///
@@ -16,22 +16,22 @@
 /// Constants](https://developer.apple.com/documentation/coregraphics/quartz_window_services/window_list_option_constants)
 /// for more information.
 
-/// @property WindowListOptions::all
+/// @property window_list_options::all
 /// @brief Retrieve all window elements.
 
-/// @property WindowListOptions::on_screen_only
+/// @property window_list_options::on_screen_only
 /// @brief Retrieve only on-screen window elements.
 
-/// @property WindowListOptions::exclude_desktop_elements
+/// @property window_list_options::exclude_desktop_elements
 /// @brief Exclude any window elements on the desktop.
 
-/// @property WindowListOptions::including_window
+/// @property window_list_options::including_window
 /// @brief Include the window provided as an argument.
 
-/// @property WindowListOptions::above_window
+/// @property window_list_options::above_window
 /// @brief Retrieve only window elements above the given window.
 
-/// @property WindowListOptions::below_window
+/// @property window_list_options::below_window
 /// @brief Retrieve only window elements below the given window.
 typedef struct {
     bool all;
@@ -40,9 +40,9 @@ typedef struct {
     bool including_window;
     bool above_window;
     bool below_window;
-} WindowListOptions;
+} window_list_options;
 
-/// @struct WindowList
+/// @struct window_list
 /// @brief A struct containing a list of windows.
 ///
 /// It contains an array to a pointer of windows, the number of windows
@@ -50,27 +50,27 @@ typedef struct {
 /// in the array. There should never be a need to manually adjust the contained
 /// values. This functionality will be altered to be read-only in the future.
 
-/// @property WindowList::count
+/// @property window_list::count
 /// @brief The number of windows in the array.
 
-/// @property WindowList::capacity
+/// @property window_list::capacity
 /// @brief The maximum size of the array.
 
-/// @property WindowList::windows
+/// @property window_list::windows
 /// @brief An array containing a list of windows.
 typedef struct {
     int      count;
     int      capacity;
     window **windows;
-} WindowList;
+} window_list;
 
 /// @brief Retrieve a list of windows.
-/// @param options A WindowListOptions struct containing the relevant options.
+/// @param options A window_list_options struct containing the relevant options.
 /// @param w The window which the results are relative to.
 ///
 /// May be NULL depending on your options.
-/// @returns Returns a WindowList struct containing the relevant information.
-WindowList get_window_list(WindowListOptions options, window *window);
+/// @returns Returns a window_list struct containing the relevant information.
+window_list get_window_list(window_list_options options, window *window);
 
 /// @brief Set the size and position of a given window.
 /// @param window The window to move and/or resize.

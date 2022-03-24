@@ -1,10 +1,10 @@
 #include "../include/swim.h"
 
 int main(void) {
-    WindowListOptions options = {
+    window_list_options options = {
         .on_screen_only = true,
     };
-    WindowList window_list = get_window_list(options, NULL);
+    window_list window_list = get_window_list(options, NULL);
     window *focused_window = window_list.windows[0];
 
     CGRect new_frame = {
