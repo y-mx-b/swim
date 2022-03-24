@@ -27,6 +27,8 @@ preferred browser.
 
 - [x] Write documentation (Doxygen comments + proper documentation)
 - [X] Implement window movement and resizing
+- [ ] Improve memory usage (application + window redundancy in memory)
+- [ ] Implement spaces support
 - [ ] Implement grid-based resizing (maybe?)
 - [ ] Implement modal drawing support
 - [ ] Improve memory usage, make application objects global
