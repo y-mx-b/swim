@@ -2,19 +2,10 @@
 #include <ApplicationServices/ApplicationServices.h>
 #include <CoreFoundation/CoreFoundation.h>
 
-struct _window {
-    application   *app;
-    AXUIElementRef ax_window;
-    CGWindowID     id;
-    // int layer;
-    CGRect      frame;
-    CFStringRef title;
-};
-
-window *_create_window(
-        application *app, AXUIElementRef ax_window, CGWindowID id, CGRect frame,
+struct window *_create_window(
+        struct application *app, AXUIElementRef ax_window, CGWindowID id, CGRect frame,
         CFStringRef title) {
-    window *new_window = (window *) malloc(sizeof(window));
+    struct window *new_window = (struct window *) malloc(sizeof(struct window));
 
     new_window->app       = app;
     new_window->ax_window = ax_window;
@@ -86,8 +77,8 @@ AXUIElementRef _get_matching_window_AXUIElementRef(
     return ax_window;
 }
 
-window *window_from_CFDictionary(CFDictionaryRef window_dict) {
-    window *new_window = NULL;
+struct window *window_from_CFDictionary(CFDictionaryRef window_dict) {
+    struct window *new_window = NULL;
 
     // check window layer
     // if not on normal level, skip
@@ -112,15 +103,15 @@ window *window_from_CFDictionary(CFDictionaryRef window_dict) {
         return NULL;
     }
 
-    application *app = create_application(pid);
+    struct application *app = create_application(pid);
     if (app == NULL) {
         if (title != NULL) { CFRelease(title); }
         return NULL;
     }
 
     // get AXUIElementRef
-    AXUIElementRef ax_window = _get_matching_window_AXUIElementRef(
-            get_application_AXUIElement(app), title, frame);
+    AXUIElementRef ax_window =
+            _get_matching_window_AXUIElementRef(app->ax_app, title, frame);
 
     // get remaining information
     CFNumberRef cf_id = CFDictionaryGetValue(window_dict, kCGWindowNumber);
@@ -138,7 +129,7 @@ window *window_from_CFDictionary(CFDictionaryRef window_dict) {
     return new_window;
 }
 
-bool windows_equal(window *w1, window *w2) {
+bool windows_equal(struct window *w1, struct window *w2) {
     bool title_equality;
     if (w1->title == NULL && w2->title == NULL) {
         title_equality = true;
@@ -156,28 +147,28 @@ bool windows_equal(window *w1, window *w2) {
 }
 
 // GET WINDOW PROPERTIES
-AXUIElementRef get_window_AXUIElementRef(window *window) {
+AXUIElementRef get_window_AXUIElementRef(struct window *window) {
     return window->ax_window;
 }
 
-application *get_window_application(window *window) {
+struct application *get_window_application(struct window *window) {
     return window->app;
 }
 
-CGWindowID get_window_id(window *window) {
+CGWindowID get_window_id(struct window *window) {
     return window->id;
 }
 
-CFStringRef get_window_title(window *window) {
+CFStringRef get_window_title(struct window *window) {
     return window->title;
 }
 
-CGRect get_window_frame(window *window) {
+CGRect get_window_frame(struct window *window) {
     return window->frame;
 }
 
 // DEINIT
-void destroy_window(window *window) {
+void destroy_window(struct window *window) {
     if (window->app != NULL) { destroy_application(window->app); }
     if (window->ax_window != NULL) { CFRelease(window->ax_window); }
     if (window->title != NULL) { CFRelease(window->title); }

@@ -4,8 +4,8 @@ int main(void) {
     window_list_options options = {
             .on_screen_only = true,
     };
-    window_list window_list    = get_window_list(options, NULL);
-    window     *focused_window = window_list.windows[0];
+    window_list    window_list    = get_window_list(options, NULL);
+    struct window *focused_window = window_list.windows[0];
 
     CGRect new_frame = {
             .origin =
@@ -20,10 +20,9 @@ int main(void) {
                              },
     };
 
-    char *window_title     = cstring_from_CFString(get_window_title(focused_window));
-    char *application_name = cstring_from_CFString(
-            get_application_name(get_window_application(focused_window)));
-    CGRect frame = get_window_frame(focused_window);
+    char  *window_title     = cstring_from_CFString(focused_window->title);
+    char  *application_name = cstring_from_CFString(focused_window->app->name);
+    CGRect frame            = focused_window->frame;
 
     printf("%s\n", application_name);
     printf("%s\n", window_title);

@@ -3,14 +3,9 @@
 #include <AvailabilityMacros.h>
 #include <CoreFoundation/CoreFoundation.h>
 
-struct _application {
-    AXUIElementRef ax_app;
-    pid_t          pid;
-    CFStringRef    name;
-};
-
-application *_create_application(AXUIElementRef ax_app, pid_t pid, CFStringRef name) {
-    application *app = (application *) malloc(sizeof(application));
+struct application *
+        _create_application(AXUIElementRef ax_app, pid_t pid, CFStringRef name) {
+    struct application *app = (struct application *) malloc(sizeof(struct application));
 
     app->ax_app = ax_app;
     app->pid    = pid;
@@ -19,7 +14,7 @@ application *_create_application(AXUIElementRef ax_app, pid_t pid, CFStringRef n
     return app;
 }
 
-application *create_application(pid_t pid) {
+struct application *create_application(pid_t pid) {
     AXUIElementRef ax_app = AXUIElementCreateApplication(pid);
 
     CFStringRef name;
@@ -27,12 +22,12 @@ application *create_application(pid_t pid) {
     if (name == NULL) { return NULL; }
     name = CFStringCreateCopy(kCFAllocatorDefault, name);
 
-    application *app = _create_application(ax_app, pid, name);
+    struct application *app = _create_application(ax_app, pid, name);
 
     return app;
 }
 
-bool applications_equal(application *a1, application *a2) {
+bool applications_equal(struct application *a1, struct application *a2) {
     if (a1->pid == a2->pid
         && CFStringCompare(a1->name, a2->name, 0) == kCFCompareEqualTo) {
         return true;
@@ -40,21 +35,8 @@ bool applications_equal(application *a1, application *a2) {
     return false;
 }
 
-// GET APPLICATION PROPERTIES
-AXUIElementRef get_application_AXUIElement(application *app) {
-    return app->ax_app;
-}
-
-CFStringRef get_application_name(application *app) {
-    return app->name;
-}
-
-pid_t get_application_pid(application *app) {
-    return app->pid;
-}
-
 // DEINIT
-void destroy_application(application *app) {
+void destroy_application(struct application *app) {
     CFRelease(app->name);
     CFRelease(app->ax_app);
     free(app);

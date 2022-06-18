@@ -57,11 +57,11 @@ typedef struct {
 /// @brief The maximum size of the array.
 
 /// @property window_list::windows
-/// @brief An array containing a list of windows.
+/// @brief An array of pointers ot windows..
 typedef struct {
-    int      count;
-    int      capacity;
-    window **windows;
+    int             count;
+    int             capacity;
+    struct window **windows;
 } window_list;
 
 /// @brief Retrieve a list of windows.
@@ -70,11 +70,11 @@ typedef struct {
 ///
 /// May be NULL depending on your options.
 /// @returns Returns a window_list struct containing the relevant information.
-window_list get_window_list(window_list_options options, window *window);
+window_list get_window_list(window_list_options options, struct window *window);
 
 /// @brief Set the size and position of a given window.
 /// @param window The window to move and/or resize.
 /// @param new_frame The new size and position.
-void set_window_frame(window *window, CGRect new_frame);
+void set_window_frame(struct window *window, CGRect new_frame);
 
 #endif

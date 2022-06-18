@@ -5,7 +5,7 @@
 // #include <ApplicationServices/ApplicationServices.h>
 // #include <AvailabilityMacros.h>
 
-window_list get_window_list(window_list_options options, window *w) {
+window_list get_window_list(window_list_options options, struct window *w) {
     // set options
     CGWindowListOption cf_options =
             (kCGWindowListOptionAll * options.all)
@@ -17,7 +17,7 @@ window_list get_window_list(window_list_options options, window *w) {
 
     // set relative window_count
     CGWindowID relative_window = kCGNullWindowID;
-    if (w != NULL) { relative_window = get_window_id(w); }
+    if (w != NULL) { relative_window = w->id; }
 
     // get window information
     CFArrayRef cf_window_dicts = CGWindowListCopyWindowInfo(cf_options, relative_window);
@@ -32,7 +32,7 @@ window_list get_window_list(window_list_options options, window *w) {
     int counter = 0;
     for (int i = 0; i < window_count; i++) {
         CFDictionaryRef cf_window_dict = CFArrayGetValueAtIndex(cf_window_dicts, i);
-        window         *new_w          = window_from_CFDictionary(cf_window_dict);
+        struct window  *new_w          = window_from_CFDictionary(cf_window_dict);
 
         // only append if window is valid
         if (new_w != NULL) {
@@ -58,8 +58,8 @@ void _set_window_position(AXUIElementRef ax_window, CGPoint *position) {
             AXUIElementSetAttributeValue(ax_window, kAXPositionAttribute, ax_position);
 }
 
-void set_window_frame(window *window, CGRect new_frame) {
-    AXUIElementRef ax_window = get_window_AXUIElementRef(window);
+void set_window_frame(struct window *window, CGRect new_frame) {
+    AXUIElementRef ax_window = window->ax_window;
     _set_window_size(ax_window, &new_frame.size);
     _set_window_position(ax_window, &new_frame.origin);
 }
