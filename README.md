@@ -26,7 +26,7 @@ preferred browser.
 ## TODO
 
 - [x] Write documentation (Doxygen comments + proper documentation)
-- [X] Implement window movement and resizing
+- [x] Implement window movement and resizing
 - [ ] Rewrite library for proper error handling (you are dumb)
 - [ ] Implement spaces support (probably not)
 - [ ] Implement modal drawing support
