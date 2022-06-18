@@ -54,7 +54,8 @@ void _set_window_size(AXUIElementRef ax_window, CGSize *size) {
 
 void _set_window_position(AXUIElementRef ax_window, CGPoint *position) {
     AXValueRef ax_position = AXValueCreate(kAXValueCGPointType, position);
-    AXError error = AXUIElementSetAttributeValue(ax_window, kAXPositionAttribute, ax_position);
+    AXError    error =
+            AXUIElementSetAttributeValue(ax_window, kAXPositionAttribute, ax_position);
 }
 
 void set_window_frame(window *window, CGRect new_frame) {
