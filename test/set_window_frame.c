@@ -4,7 +4,7 @@ int main(void) {
     window_list_options options = {
             .on_screen_only = true,
     };
-    window_list    window_list    = get_window_list(options, NULL);
+    window_list    window_list    = get_window_list(options, NULL, NULL);
     struct window *focused_window = window_list.windows[0];
 
     CGRect new_frame = {
@@ -32,5 +32,5 @@ int main(void) {
     free(application_name);
 
     printf("\n");
-    set_window_frame(focused_window, new_frame);
+    set_window_frame(focused_window, new_frame, NULL);
 }

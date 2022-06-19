@@ -6,7 +6,7 @@ int main(void) {
             .on_screen_only           = true,
     };
 
-    window_list window_list = get_window_list(options, NULL);
+    window_list window_list = get_window_list(options, NULL, NULL);
 
     for (int i = 0; i < window_list.count; i++) {
         struct window *w        = window_list.windows[i];
