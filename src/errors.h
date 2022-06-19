@@ -6,6 +6,7 @@
 /// @enum error
 /// @brief An enum containing error codes.
 enum error {
+    UNKNOWN, // PLACEHOLDER
     NONE,
     NO_WINDOW,
     NO_APPLICATION,
