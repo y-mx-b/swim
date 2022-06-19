@@ -107,18 +107,18 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a582c2082a767b0854778d391ca9d54d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structwindow__list.html">window_list</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window__manager_8h.html#a582c2082a767b0854778d391ca9d54d2">get_window_list</a> (<a class="el" href="structwindow__list__options.html">window_list_options</a> options, struct <a class="el" href="structwindow.html">window</a> *<a class="el" href="structwindow.html">window</a>)</td></tr>
-<tr class="memdesc:a582c2082a767b0854778d391ca9d54d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a list of windows.  <a href="window__manager_8h.html#a582c2082a767b0854778d391ca9d54d2">More...</a><br /></td></tr>
-<tr class="separator:a582c2082a767b0854778d391ca9d54d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d3d2d0c8433f2fb8ce48ad7e6a94921"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window__manager_8h.html#a9d3d2d0c8433f2fb8ce48ad7e6a94921">set_window_frame</a> (struct <a class="el" href="structwindow.html">window</a> *<a class="el" href="structwindow.html">window</a>, CGRect new_frame)</td></tr>
-<tr class="memdesc:a9d3d2d0c8433f2fb8ce48ad7e6a94921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size and position of a given window.  <a href="window__manager_8h.html#a9d3d2d0c8433f2fb8ce48ad7e6a94921">More...</a><br /></td></tr>
-<tr class="separator:a9d3d2d0c8433f2fb8ce48ad7e6a94921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65636fa7147535d96f5668030cbca38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structwindow__list.html">window_list</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window__manager_8h.html#aa65636fa7147535d96f5668030cbca38">get_window_list</a> (<a class="el" href="structwindow__list__options.html">window_list_options</a> options, struct <a class="el" href="structwindow.html">window</a> *w, enum <a class="el" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> *err)</td></tr>
+<tr class="memdesc:aa65636fa7147535d96f5668030cbca38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a list of windows.  <a href="window__manager_8h.html#aa65636fa7147535d96f5668030cbca38">More...</a><br /></td></tr>
+<tr class="separator:aa65636fa7147535d96f5668030cbca38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a715af5782703e4fd95450932270f7d71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window__manager_8h.html#a715af5782703e4fd95450932270f7d71">set_window_frame</a> (struct <a class="el" href="structwindow.html">window</a> *<a class="el" href="structwindow.html">window</a>, CGRect new_frame, enum <a class="el" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> *err)</td></tr>
+<tr class="memdesc:a715af5782703e4fd95450932270f7d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size and position of a given window.  <a href="window__manager_8h.html#a715af5782703e4fd95450932270f7d71">More...</a><br /></td></tr>
+<tr class="separator:a715af5782703e4fd95450932270f7d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The file containing the relevant functions for managing windows. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a582c2082a767b0854778d391ca9d54d2" name="a582c2082a767b0854778d391ca9d54d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a582c2082a767b0854778d391ca9d54d2">&#9670;&nbsp;</a></span>get_window_list()</h2>
+<a id="aa65636fa7147535d96f5668030cbca38" name="aa65636fa7147535d96f5668030cbca38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65636fa7147535d96f5668030cbca38">&#9670;&nbsp;</a></span>get_window_list()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,7 +133,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structwindow.html">window</a> *&#160;</td>
-          <td class="paramname"><em>window</em>&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> *&#160;</td>
+          <td class="paramname"><em>err</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -147,7 +153,8 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">options</td><td>A <a class="el" href="structwindow__list__options.html" title="A struct specifying the options to use when retrieving a list of windows.">window_list_options</a> struct containing the relevant options. </td></tr>
-    <tr><td class="paramname">w</td><td>The window which the results are relative to.</td></tr>
+    <tr><td class="paramname">w</td><td>The window which the results are relative to. </td></tr>
+    <tr><td class="paramname">err</td><td>A pointer to an error variable to get the error code. May be null.</td></tr>
   </table>
   </dd>
 </dl>
@@ -155,8 +162,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9d3d2d0c8433f2fb8ce48ad7e6a94921" name="a9d3d2d0c8433f2fb8ce48ad7e6a94921"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d3d2d0c8433f2fb8ce48ad7e6a94921">&#9670;&nbsp;</a></span>set_window_frame()</h2>
+<a id="a715af5782703e4fd95450932270f7d71" name="a715af5782703e4fd95450932270f7d71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a715af5782703e4fd95450932270f7d71">&#9670;&nbsp;</a></span>set_window_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +178,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">CGRect&#160;</td>
-          <td class="paramname"><em>new_frame</em>&#160;</td>
+          <td class="paramname"><em>new_frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> *&#160;</td>
+          <td class="paramname"><em>err</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -186,9 +199,11 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">window</td><td>The window to move and/or resize. </td></tr>
     <tr><td class="paramname">new_frame</td><td>The new size and position. </td></tr>
+    <tr><td class="paramname">err</td><td>A pointer to an error variable to get the error code. May be null.</td></tr>
   </table>
   </dd>
 </dl>
+<p>Size and position are assigned separately, so in the case that there are two errors, the last error will be returned. </p>
 
 </div>
 </div>

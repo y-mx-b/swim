@@ -122,10 +122,10 @@ Overview</h1>
 <div class="line">        .exclude_desktop_elements = <span class="keyword">true</span>,</div>
 <div class="line">        .on_screen_only = <span class="keyword">true</span>,</div>
 <div class="line">    };</div>
-<div class="line">    WindowList <a class="code hl_struct" href="structwindow__list.html">window_list</a> = <a class="code hl_function" href="window__manager_8h.html#a582c2082a767b0854778d391ca9d54d2">get_window_list</a>(options, NULL);</div>
+<div class="line">    WindowList <a class="code hl_struct" href="structwindow__list.html">window_list</a> = <a class="code hl_function" href="window__manager_8h.html#aa65636fa7147535d96f5668030cbca38">get_window_list</a>(options, NULL);</div>
 <div class="line">}</div>
 <div class="ttc" id="astructwindow__list_html"><div class="ttname"><a href="structwindow__list.html">window_list</a></div><div class="ttdoc">A struct containing a list of windows.</div><div class="ttdef"><b>Definition:</b> window_manager.h:61</div></div>
-<div class="ttc" id="awindow__manager_8h_html_a582c2082a767b0854778d391ca9d54d2"><div class="ttname"><a href="window__manager_8h.html#a582c2082a767b0854778d391ca9d54d2">get_window_list</a></div><div class="ttdeci">window_list get_window_list(window_list_options options, struct window *window)</div><div class="ttdoc">Retrieve a list of windows.</div></div>
+<div class="ttc" id="awindow__manager_8h_html_aa65636fa7147535d96f5668030cbca38"><div class="ttname"><a href="window__manager_8h.html#aa65636fa7147535d96f5668030cbca38">get_window_list</a></div><div class="ttdeci">window_list get_window_list(window_list_options options, struct window *w, enum error *err)</div><div class="ttdoc">Retrieve a list of windows.</div></div>
 </div><!-- fragment --><p >Now, let's print the titles of every window on-screen!</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;swim.h&quot;</span></div>
 <div class="line"> </div>
@@ -143,7 +143,7 @@ Overview</h1>
 <div class="line">        .exclude_desktop_elements = <span class="keyword">true</span>,</div>
 <div class="line">        .on_screen_only = <span class="keyword">true</span>,</div>
 <div class="line">    };</div>
-<div class="line">    WindowList <a class="code hl_struct" href="structwindow__list.html">window_list</a> = <a class="code hl_function" href="window__manager_8h.html#a582c2082a767b0854778d391ca9d54d2">get_window_list</a>(options, NULL);</div>
+<div class="line">    WindowList <a class="code hl_struct" href="structwindow__list.html">window_list</a> = <a class="code hl_function" href="window__manager_8h.html#aa65636fa7147535d96f5668030cbca38">get_window_list</a>(options, NULL);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// print all window titles</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_struct" href="structwindow__list.html">window_list</a>.<a class="code hl_variable" href="structwindow__list.html#aaf788dd681fff6a6083d358d799252f0">count</a>; i++) {</div>

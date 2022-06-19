@@ -104,9 +104,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acff57277e2374d05fa11a3528a53b9d9"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structwindow.html">window</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8h.html#acff57277e2374d05fa11a3528a53b9d9">window_from_CFDictionary</a> (CFDictionaryRef window_dict)</td></tr>
-<tr class="memdesc:acff57277e2374d05fa11a3528a53b9d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and return a pointer to an opaque window struct.  <a href="window_8h.html#acff57277e2374d05fa11a3528a53b9d9">More...</a><br /></td></tr>
-<tr class="separator:acff57277e2374d05fa11a3528a53b9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa82055f45e871f61641161fd3c014fae"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structwindow.html">window</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8h.html#aa82055f45e871f61641161fd3c014fae">window_from_CFDictionary</a> (CFDictionaryRef window_dict, enum <a class="el" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> *err)</td></tr>
+<tr class="memdesc:aa82055f45e871f61641161fd3c014fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and return a pointer to an opaque window struct.  <a href="window_8h.html#aa82055f45e871f61641161fd3c014fae">More...</a><br /></td></tr>
+<tr class="separator:aa82055f45e871f61641161fd3c014fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1997af5328331171bc3ec0057148e504"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8h.html#a1997af5328331171bc3ec0057148e504">windows_equal</a> (struct <a class="el" href="structwindow.html">window</a> *w1, struct <a class="el" href="structwindow.html">window</a> *w2)</td></tr>
 <tr class="memdesc:a1997af5328331171bc3ec0057148e504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two windows are the same.  <a href="window_8h.html#a1997af5328331171bc3ec0057148e504">More...</a><br /></td></tr>
 <tr class="separator:a1997af5328331171bc3ec0057148e504"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,8 +143,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acff57277e2374d05fa11a3528a53b9d9" name="acff57277e2374d05fa11a3528a53b9d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acff57277e2374d05fa11a3528a53b9d9">&#9670;&nbsp;</a></span>window_from_CFDictionary()</h2>
+<a id="aa82055f45e871f61641161fd3c014fae" name="aa82055f45e871f61641161fd3c014fae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa82055f45e871f61641161fd3c014fae">&#9670;&nbsp;</a></span>window_from_CFDictionary()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,8 +153,18 @@ Functions</h2></td></tr>
           <td class="memname">struct <a class="el" href="structwindow.html">window</a> * window_from_CFDictionary </td>
           <td>(</td>
           <td class="paramtype">CFDictionaryRef&#160;</td>
-          <td class="paramname"><em>window_dict</em></td><td>)</td>
+          <td class="paramname"><em>window_dict</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">enum <a class="el" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> *&#160;</td>
+          <td class="paramname"><em>err</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -162,7 +172,8 @@ Functions</h2></td></tr>
 <p>Create and return a pointer to an opaque window struct. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window_dict</td><td>The CFDictionaryRef containing the relevant window's information.</td></tr>
+    <tr><td class="paramname">window_dict</td><td>The CFDictionaryRef containing the relevant window's information. </td></tr>
+    <tr><td class="paramname">err</td><td>A pointer to an error variable to get the error code. May be null.</td></tr>
   </table>
   </dd>
 </dl>
@@ -204,7 +215,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns true if they are the same, false if not. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if they are the same, false if not. Returns false if either pointer is null. </dd></dl>
 
 </div>
 </div>

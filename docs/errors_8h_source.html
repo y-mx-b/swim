@@ -87,27 +87,37 @@ $(document).ready(function(){initNavTree('errors_8h_source.html',''); initResiza
   <div class="headertitle"><div class="title">errors.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ERRORS_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ERRORS_H</span></div>
+<a href="errors_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">enum</span> error {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    NONE,</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    NO_WINDOW,</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    NO_APPLICATION,</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    NULL_POINTER,</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>};</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">inline</span> <span class="keywordtype">void</span> assign_error(<span class="keyword">enum</span> error *err, <span class="keyword">enum</span> error e) {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">if</span> (err != 0) { *err = e; }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef ERRORS_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define ERRORS_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;ApplicationServices/ApplicationServices.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">   11</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    UNKNOWN, <span class="comment">// PLACEHOLDER</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    NONE,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    NO_WINDOW,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    NO_APPLICATION,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    NULL_POINTER,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="errors_8h.html#a0f1c5a1cb506ac56024412575cabdd93">   22</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="errors_8h.html#a0f1c5a1cb506ac56024412575cabdd93">assign_error</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> *err, <span class="keyword">enum</span> <a class="code hl_enumeration" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> e) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (err != 0) { *err = e; }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="errors_8h.html#acff03aac804b0fa1f89645c87ce39fab">   29</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> <a class="code hl_function" href="errors_8h.html#acff03aac804b0fa1f89645c87ce39fab">error_from_AXError</a>(AXError err);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aerrors_8h_html_a0f1c5a1cb506ac56024412575cabdd93"><div class="ttname"><a href="errors_8h.html#a0f1c5a1cb506ac56024412575cabdd93">assign_error</a></div><div class="ttdeci">void assign_error(enum error *err, enum error e)</div><div class="ttdoc">Assign an error code to an error variable if the pointer is not null.</div><div class="ttdef"><b>Definition:</b> errors.h:22</div></div>
+<div class="ttc" id="aerrors_8h_html_acff03aac804b0fa1f89645c87ce39fab"><div class="ttname"><a href="errors_8h.html#acff03aac804b0fa1f89645c87ce39fab">error_from_AXError</a></div><div class="ttdeci">enum error error_from_AXError(AXError err)</div><div class="ttdoc">Get an error from an AXError type.</div></div>
+<div class="ttc" id="aerrors_8h_html_af10dacfa214e2575bb2e0ee407c242e0"><div class="ttname"><a href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a></div><div class="ttdeci">error</div><div class="ttdoc">An enum containing error codes.</div><div class="ttdef"><b>Definition:</b> errors.h:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>errors.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="errors_8h.html">errors.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

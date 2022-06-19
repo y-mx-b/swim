@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['get_5fwindow_5flist_0',['get_window_list',['../window__manager_8h.html#a582c2082a767b0854778d391ca9d54d2',1,'window_manager.h']]]
+  ['error_5ffrom_5faxerror_0',['error_from_AXError',['../errors_8h.html#acff03aac804b0fa1f89645c87ce39fab',1,'errors.h']]]
 ];
