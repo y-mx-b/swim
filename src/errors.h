@@ -1,6 +1,8 @@
 #ifndef ERRORS_H
 #define ERRORS_H
 
+#include <ApplicationServices/ApplicationServices.h>
+
 /// @enum error
 /// @brief An enum containing error codes.
 enum error {
@@ -16,5 +18,10 @@ enum error {
 inline void assign_error(enum error *err, enum error e) {
     if (err != 0) { *err = e; }
 }
+
+/// @brief Get an error from an AXError type.
+/// @param err An AXError error.
+/// @return The matching error case for the AXError.
+enum error error_from_AXError(AXError err);
 
 #endif
