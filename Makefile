@@ -41,7 +41,8 @@ lib:
 
 
 ### MISC
-docs:
+FORCE: ;
+docs: FORCE
 				doxygen
 clean:
 				rm -r .build lib

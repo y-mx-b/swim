@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['capacity_0',['capacity',['../struct_window_list.html#a887bcd732320e64593250c2d34603efe',1,'WindowList']]],
-  ['count_1',['count',['../struct_window_list.html#a02733166eb6a1c39f443dc43acb8587c',1,'WindowList']]],
-  ['create_5fapplication_2',['create_application',['../application_8h.html#a8eecd2a1d307204cda26d2d6382d844d',1,'application.h']]],
+  ['capacity_0',['capacity',['../structwindow__list.html#a4eab4605abd42439b3db4c8f67a63304',1,'window_list']]],
+  ['count_1',['count',['../structwindow__list.html#aaf788dd681fff6a6083d358d799252f0',1,'window_list']]],
+  ['create_5fapplication_2',['create_application',['../application_8h.html#a7c11dbcb80795f96fb70051c6bfafe75',1,'application.h']]],
   ['cstring_5ffrom_5fcfstring_3',['cstring_from_CFString',['../utilities_8h.html#a825f5653824a0d6cf24ebf8a6b044f50',1,'utilities.h']]]
 ];
