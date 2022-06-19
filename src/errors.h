@@ -1,3 +1,6 @@
+/// @file
+/// @brief The file containing types and functions relevant to error handling.
+
 #ifndef ERRORS_H
 #define ERRORS_H
 
