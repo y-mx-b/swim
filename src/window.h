@@ -29,7 +29,8 @@ struct window *window_from_CFDictionary(CFDictionaryRef window_dict, enum error 
 /// @brief Check if two windows are the same.
 /// @param w1 The first window.
 /// @param w2 The second window.
-/// @return Returns true if they are the same, false if not. Returns false if either pointer is null.
+/// @return Returns true if they are the same, false if not. Returns false if either
+/// pointer is null.
 bool windows_equal(struct window *w1, struct window *w2);
 
 /// @brief Free the window struct and its contents.

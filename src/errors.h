@@ -9,11 +9,15 @@
 /// @enum error
 /// @brief An enum containing error codes.
 enum error {
-    UNKNOWN, // PLACEHOLDER
     NONE,
+    NO_PERMISSIONS,
     NO_WINDOW,
     NO_APPLICATION,
+    NO_ELEMENT,
+    NO_ATTRIBUTE,
+    INVALID_ARGUMENT,
     NULL_POINTER,
+    UNKNOWN, // PLACEHOLDER
 };
 
 /// @brief Assign an error code to an error variable if the pointer is not null.
