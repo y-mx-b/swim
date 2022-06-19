@@ -7,5 +7,6 @@
 #include "../src/utilities.h"
 #include "../src/window.h"
 #include "../src/window_manager.h"
+#include "../src/errors.h"
 
 #endif

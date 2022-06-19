@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['window_5ffrom_5fcfdictionary_0',['window_from_CFDictionary',['../window_8h.html#acff57277e2374d05fa11a3528a53b9d9',1,'window.h']]],
-  ['windows_5fequal_1',['windows_equal',['../window_8h.html#a1997af5328331171bc3ec0057148e504',1,'window.h']]]
+  ['set_5fwindow_5fframe_0',['set_window_frame',['../window__manager_8h.html#a715af5782703e4fd95450932270f7d71',1,'window_manager.h']]]
 ];

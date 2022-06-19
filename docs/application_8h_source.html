@@ -91,27 +91,30 @@ $(document).ready(function(){initNavTree('application_8h_source.html',''); initR
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef APPLICATION_H</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define APPLICATION_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;ApplicationServices/ApplicationServices.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;CoreFoundation/CoreFoundation.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structapplication.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structapplication.html">application</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    AXUIElementRef ax_app;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    pid_t          pid;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    CFStringRef    name;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="errors_8h.html">errors.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;ApplicationServices/ApplicationServices.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;CoreFoundation/CoreFoundation.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structapplication.html">   12</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structapplication.html">application</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    AXUIElementRef ax_app;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    pid_t          pid;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    CFStringRef    name;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="application_8h.html#a7c11dbcb80795f96fb70051c6bfafe75">   21</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structapplication.html">application</a> *<a class="code hl_function" href="application_8h.html#a7c11dbcb80795f96fb70051c6bfafe75">create_application</a>(pid_t pid);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="application_8h.html#aa37ed8eeff693da110daeee0425c4760">   27</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="application_8h.html#aa37ed8eeff693da110daeee0425c4760">applications_equal</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structapplication.html">application</a> *a1, <span class="keyword">struct</span> <a class="code hl_struct" href="structapplication.html">application</a> *a2);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="application_8h.html#ae916ec765ff514dffdad0e6d6a4cd05b">   31</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="application_8h.html#ae916ec765ff514dffdad0e6d6a4cd05b">destroy_application</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structapplication.html">application</a> *app);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aapplication_8h_html_a7c11dbcb80795f96fb70051c6bfafe75"><div class="ttname"><a href="application_8h.html#a7c11dbcb80795f96fb70051c6bfafe75">create_application</a></div><div class="ttdeci">struct application * create_application(pid_t pid)</div><div class="ttdoc">Create and return a pointer to an opaque application struct.</div></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="application_8h.html#afb6f17cb26005037b038963b57a895ad">   23</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structapplication.html">application</a> *<a class="code hl_function" href="application_8h.html#afb6f17cb26005037b038963b57a895ad">create_application</a>(pid_t pid, <span class="keyword">enum</span> <a class="code hl_enumeration" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> *err);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="application_8h.html#aa37ed8eeff693da110daeee0425c4760">   30</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="application_8h.html#aa37ed8eeff693da110daeee0425c4760">applications_equal</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structapplication.html">application</a> *a1, <span class="keyword">struct</span> <a class="code hl_struct" href="structapplication.html">application</a> *a2);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="application_8h.html#ae916ec765ff514dffdad0e6d6a4cd05b">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="application_8h.html#ae916ec765ff514dffdad0e6d6a4cd05b">destroy_application</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structapplication.html">application</a> *app);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aapplication_8h_html_aa37ed8eeff693da110daeee0425c4760"><div class="ttname"><a href="application_8h.html#aa37ed8eeff693da110daeee0425c4760">applications_equal</a></div><div class="ttdeci">bool applications_equal(struct application *a1, struct application *a2)</div><div class="ttdoc">Check if two applications are the same.</div></div>
 <div class="ttc" id="aapplication_8h_html_ae916ec765ff514dffdad0e6d6a4cd05b"><div class="ttname"><a href="application_8h.html#ae916ec765ff514dffdad0e6d6a4cd05b">destroy_application</a></div><div class="ttdeci">void destroy_application(struct application *app)</div><div class="ttdoc">Free the application struct and its contents.</div></div>
-<div class="ttc" id="astructapplication_html"><div class="ttname"><a href="structapplication.html">application</a></div><div class="ttdoc">A struct containing information regarding applications.</div><div class="ttdef"><b>Definition:</b> application.h:11</div></div>
+<div class="ttc" id="aapplication_8h_html_afb6f17cb26005037b038963b57a895ad"><div class="ttname"><a href="application_8h.html#afb6f17cb26005037b038963b57a895ad">create_application</a></div><div class="ttdeci">struct application * create_application(pid_t pid, enum error *err)</div><div class="ttdoc">Create and return a pointer to an opaque application struct.</div></div>
+<div class="ttc" id="aerrors_8h_html"><div class="ttname"><a href="errors_8h.html">errors.h</a></div><div class="ttdoc">The file containing types and functions relevant to error handling.</div></div>
+<div class="ttc" id="aerrors_8h_html_af10dacfa214e2575bb2e0ee407c242e0"><div class="ttname"><a href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a></div><div class="ttdeci">error</div><div class="ttdoc">An enum containing error codes.</div><div class="ttdef"><b>Definition:</b> errors.h:11</div></div>
+<div class="ttc" id="astructapplication_html"><div class="ttname"><a href="structapplication.html">application</a></div><div class="ttdoc">A struct containing information regarding applications.</div><div class="ttdef"><b>Definition:</b> application.h:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

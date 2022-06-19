@@ -77,7 +77,7 @@ AXUIElementRef _get_matching_window_AXUIElementRef(
     return ax_window;
 }
 
-struct window *window_from_CFDictionary(CFDictionaryRef window_dict) {
+struct window *window_from_CFDictionary(CFDictionaryRef window_dict, enum error *err) {
     struct window *new_window = NULL;
 
     // check window layer
@@ -85,7 +85,10 @@ struct window *window_from_CFDictionary(CFDictionaryRef window_dict) {
     CFNumberRef cf_layer = CFDictionaryGetValue(window_dict, kCGWindowLayer);
     int         layer;
     CFNumberGetValue(cf_layer, kCFNumberIntType, &layer);
-    if (layer != 0) { return NULL; }
+    if (layer != 0) {
+        assign_error(err, NO_WINDOW);
+        return NULL;
+    }
 
     // get necessary information to acquire AXUIElementRef
     CFNumberRef cf_pid = CFDictionaryGetValue(window_dict, kCGWindowOwnerPID);
@@ -100,10 +103,11 @@ struct window *window_from_CFDictionary(CFDictionaryRef window_dict) {
     CGRectMakeWithDictionaryRepresentation(cf_frame, &frame);
     if (CGSizeEqualToSize(frame.size, (CGSize){0, 0})) {
         if (title != NULL) { CFRelease(title); }
+        assign_error(err, NO_WINDOW);
         return NULL;
     }
 
-    struct application *app = create_application(pid);
+    struct application *app = create_application(pid, err);
     if (app == NULL) {
         if (title != NULL) { CFRelease(title); }
         return NULL;
@@ -121,15 +125,19 @@ struct window *window_from_CFDictionary(CFDictionaryRef window_dict) {
     // final checks
     if (ax_window == NULL) {
         if (title != NULL) { CFRelease(title); }
+        assign_error(err, NO_WINDOW);
         return NULL;
     }
 
     new_window = _create_window(app, ax_window, id, frame, title);
 
+    assign_error(err, NONE);
     return new_window;
 }
 
 bool windows_equal(struct window *w1, struct window *w2) {
+    if (w1 == NULL || w2 == NULL) { return false; }
+
     bool title_equality;
     if (w1->title == NULL && w2->title == NULL) {
         title_equality = true;
@@ -144,27 +152,6 @@ bool windows_equal(struct window *w1, struct window *w2) {
         return true;
     }
     return false;
-}
-
-// GET WINDOW PROPERTIES
-AXUIElementRef get_window_AXUIElementRef(struct window *window) {
-    return window->ax_window;
-}
-
-struct application *get_window_application(struct window *window) {
-    return window->app;
-}
-
-CGWindowID get_window_id(struct window *window) {
-    return window->id;
-}
-
-CFStringRef get_window_title(struct window *window) {
-    return window->title;
-}
-
-CGRect get_window_frame(struct window *window) {
-    return window->frame;
 }
 
 // DEINIT

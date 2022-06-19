@@ -92,74 +92,77 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 Overview</h1>
 <p >Let's take a look at a simple sample application.</p>
 <p >First, you must request permissions in order to ensure you have the required permissions in order to manage windows.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;swim.h&quot;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;./include/swim.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>) {</div>
 <div class="line"><span class="comment">// check permissions</span></div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_function" href="permissions_8h.html#aec95db652a94c5fb85afc646a8b6354d">request_accessibility_permissions</a>()</div>
 <div class="line">        || !<a class="code hl_function" href="permissions_8h.html#a66756f4f849735ed7eb4c324f040fe7e">request_screen_recording_permissions</a>()) {</div>
-<div class="line">        <span class="comment">// screen recording is only required on macOS 10.15+</span></div>
+<div class="line">        <span class="comment">// screen recording is only required on macOS 10.15+ to access window titles</span></div>
 <div class="line">        printf(<span class="stringliteral">&quot;Missing required permissions!\n&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="apermissions_8h_html_a66756f4f849735ed7eb4c324f040fe7e"><div class="ttname"><a href="permissions_8h.html#a66756f4f849735ed7eb4c324f040fe7e">request_screen_recording_permissions</a></div><div class="ttdeci">bool request_screen_recording_permissions()</div><div class="ttdoc">Check for and/or request screen recording permissions.</div></div>
 <div class="ttc" id="apermissions_8h_html_aec95db652a94c5fb85afc646a8b6354d"><div class="ttname"><a href="permissions_8h.html#aec95db652a94c5fb85afc646a8b6354d">request_accessibility_permissions</a></div><div class="ttdeci">bool request_accessibility_permissions()</div><div class="ttdoc">Check for and/or request accessibility permissions.</div></div>
-</div><!-- fragment --><p >Then, let's get a list of the windows currently on-screen.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;swim.h&quot;</span></div>
+</div><!-- fragment --><p >Now, let's get a list of the windows currently on-screen.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;./include/swim.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>) {</div>
 <div class="line">    <span class="comment">// check permissions</span></div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_function" href="permissions_8h.html#aec95db652a94c5fb85afc646a8b6354d">request_accessibility_permissions</a>()</div>
 <div class="line">        || !<a class="code hl_function" href="permissions_8h.html#a66756f4f849735ed7eb4c324f040fe7e">request_screen_recording_permissions</a>()) {</div>
-<div class="line">        <span class="comment">// screen recording is only required on macOS 10.15+</span></div>
+<div class="line">        <span class="comment">// screen recording is only required on macOS 10.15+ to access window titles</span></div>
 <div class="line">        printf(<span class="stringliteral">&quot;Missing required permissions!\n&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// get list of windows</span></div>
-<div class="line">    WindowListOptions options = {</div>
-<div class="line">        .exclude_desktop_elements = <span class="keyword">true</span>,</div>
-<div class="line">        .on_screen_only = <span class="keyword">true</span>,</div>
+<div class="line">    <a class="code hl_struct" href="structwindow__list__options.html">window_list_options</a> options = {</div>
+<div class="line">            .<a class="code hl_variable" href="structwindow__list__options.html#ae21d542f60c2703431f2f9ecdc5020e3">exclude_desktop_elements</a> = <span class="keyword">true</span>,</div>
+<div class="line">            .on_screen_only           = <span class="keyword">true</span>,</div>
 <div class="line">    };</div>
-<div class="line">    WindowList <a class="code hl_struct" href="structwindow__list.html">window_list</a> = <a class="code hl_function" href="window__manager_8h.html#a582c2082a767b0854778d391ca9d54d2">get_window_list</a>(options, NULL);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_struct" href="structwindow__list.html">window_list</a> <a class="code hl_struct" href="structwindow__list.html">window_list</a> = <a class="code hl_function" href="window__manager_8h.html#aa65636fa7147535d96f5668030cbca38">get_window_list</a>(options, NULL);</div>
 <div class="line">}</div>
+<div class="ttc" id="astructwindow__list__options_html"><div class="ttname"><a href="structwindow__list__options.html">window_list_options</a></div><div class="ttdoc">A struct specifying the options to use when retrieving a list of windows.</div><div class="ttdef"><b>Definition:</b> window_manager.h:36</div></div>
+<div class="ttc" id="astructwindow__list__options_html_ae21d542f60c2703431f2f9ecdc5020e3"><div class="ttname"><a href="structwindow__list__options.html#ae21d542f60c2703431f2f9ecdc5020e3">window_list_options::exclude_desktop_elements</a></div><div class="ttdeci">bool exclude_desktop_elements</div><div class="ttdoc">Exclude any window elements on the desktop.</div><div class="ttdef"><b>Definition:</b> window_manager.h:39</div></div>
 <div class="ttc" id="astructwindow__list_html"><div class="ttname"><a href="structwindow__list.html">window_list</a></div><div class="ttdoc">A struct containing a list of windows.</div><div class="ttdef"><b>Definition:</b> window_manager.h:61</div></div>
-<div class="ttc" id="awindow__manager_8h_html_a582c2082a767b0854778d391ca9d54d2"><div class="ttname"><a href="window__manager_8h.html#a582c2082a767b0854778d391ca9d54d2">get_window_list</a></div><div class="ttdeci">window_list get_window_list(window_list_options options, struct window *window)</div><div class="ttdoc">Retrieve a list of windows.</div></div>
-</div><!-- fragment --><p >Now, let's print the titles of every window on-screen!</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;swim.h&quot;</span></div>
+<div class="ttc" id="awindow__manager_8h_html_aa65636fa7147535d96f5668030cbca38"><div class="ttname"><a href="window__manager_8h.html#aa65636fa7147535d96f5668030cbca38">get_window_list</a></div><div class="ttdeci">window_list get_window_list(window_list_options options, struct window *w, enum error *err)</div><div class="ttdoc">Retrieve a list of windows.</div></div>
+</div><!-- fragment --><p >Finally, let's print the titles of every window on-screen!</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;./include/swim.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>) {</div>
 <div class="line">    <span class="comment">// check permissions</span></div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_function" href="permissions_8h.html#aec95db652a94c5fb85afc646a8b6354d">request_accessibility_permissions</a>()</div>
 <div class="line">        || !<a class="code hl_function" href="permissions_8h.html#a66756f4f849735ed7eb4c324f040fe7e">request_screen_recording_permissions</a>()) {</div>
-<div class="line">        <span class="comment">// screen recording is only required on macOS 10.15+</span></div>
+<div class="line">        <span class="comment">// screen recording is only required on macOS 10.15+ to access window titles</span></div>
 <div class="line">        printf(<span class="stringliteral">&quot;Missing required permissions!\n&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// get list of windows</span></div>
-<div class="line">    WindowListOptions options = {</div>
-<div class="line">        .exclude_desktop_elements = <span class="keyword">true</span>,</div>
-<div class="line">        .on_screen_only = <span class="keyword">true</span>,</div>
+<div class="line">    <a class="code hl_struct" href="structwindow__list__options.html">window_list_options</a> options = {</div>
+<div class="line">            .<a class="code hl_variable" href="structwindow__list__options.html#ae21d542f60c2703431f2f9ecdc5020e3">exclude_desktop_elements</a> = <span class="keyword">true</span>,</div>
+<div class="line">            .on_screen_only           = <span class="keyword">true</span>,</div>
 <div class="line">    };</div>
-<div class="line">    WindowList <a class="code hl_struct" href="structwindow__list.html">window_list</a> = <a class="code hl_function" href="window__manager_8h.html#a582c2082a767b0854778d391ca9d54d2">get_window_list</a>(options, NULL);</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// print all window titles</span></div>
+<div class="line">    <a class="code hl_struct" href="structwindow__list.html">window_list</a> <a class="code hl_struct" href="structwindow__list.html">window_list</a> = <a class="code hl_function" href="window__manager_8h.html#aa65636fa7147535d96f5668030cbca38">get_window_list</a>(options, NULL);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// print all windows titles</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_struct" href="structwindow__list.html">window_list</a>.<a class="code hl_variable" href="structwindow__list.html#aaf788dd681fff6a6083d358d799252f0">count</a>; i++) {</div>
-<div class="line">        <a class="code hl_struct" href="structwindow.html">window</a> *w = <a class="code hl_struct" href="structwindow__list.html">window_list</a>.<a class="code hl_variable" href="structwindow__list.html#a8d7d7a7a6ba2d976086267057b8e9c95">windows</a>[i];</div>
+<div class="line">        <span class="keyword">struct </span><a class="code hl_struct" href="structwindow.html">window</a> *w        = <a class="code hl_struct" href="structwindow__list.html">window_list</a>.<a class="code hl_variable" href="structwindow__list.html#a8d7d7a7a6ba2d976086267057b8e9c95">windows</a>[i];</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// get title, convert to C-string</span></div>
-<div class="line">        CFStringRef cf_title = get_window_title(w);</div>
-<div class="line">        <span class="keywordtype">char</span> *title = <a class="code hl_function" href="utilities_8h.html#a825f5653824a0d6cf24ebf8a6b044f50">cstring_from_CFString</a>(cf_title);</div>
+<div class="line">        CFStringRef    cf_title = w-&gt;title;</div>
+<div class="line">        <span class="keywordtype">char</span>          *title    = <a class="code hl_function" href="utilities_8h.html#a825f5653824a0d6cf24ebf8a6b044f50">cstring_from_CFString</a>(cf_title);</div>
 <div class="line"> </div>
-<div class="line">        printf(<span class="stringliteral">&quot;Window %d: %s\n&quot;</span>, i, title);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tWindow %d: %s\n&quot;</span>, i, title);</div>
 <div class="line"> </div>
-<div class="line">        <span class="comment">// free used resources</span></div>
 <div class="line">        free(title);</div>
 <div class="line">        <a class="code hl_function" href="window_8h.html#aaafce02d0e49b121edd57d6191b9948b">destroy_window</a>(w);</div>
 <div class="line">    }</div>
-<div class="line">    <span class="comment">// free used resources</span></div>
+<div class="line"> </div>
 <div class="line">    free(<a class="code hl_struct" href="structwindow__list.html">window_list</a>.<a class="code hl_variable" href="structwindow__list.html#a8d7d7a7a6ba2d976086267057b8e9c95">windows</a>)</div>
 <div class="line">}</div>
 <div class="ttc" id="astructwindow__list_html_a8d7d7a7a6ba2d976086267057b8e9c95"><div class="ttname"><a href="structwindow__list.html#a8d7d7a7a6ba2d976086267057b8e9c95">window_list::windows</a></div><div class="ttdeci">struct window ** windows</div><div class="ttdoc">An array of pointers ot windows..</div><div class="ttdef"><b>Definition:</b> window_manager.h:64</div></div>

@@ -67,14 +67,20 @@ typedef struct {
 /// @brief Retrieve a list of windows.
 /// @param options A window_list_options struct containing the relevant options.
 /// @param w The window which the results are relative to.
+/// @param err A pointer to an error variable to get the error code. May be null.
 ///
 /// May be NULL depending on your options.
 /// @returns Returns a window_list struct containing the relevant information.
-window_list get_window_list(window_list_options options, struct window *window);
+window_list
+        get_window_list(window_list_options options, struct window *w, enum error *err);
 
 /// @brief Set the size and position of a given window.
 /// @param window The window to move and/or resize.
 /// @param new_frame The new size and position.
-void set_window_frame(struct window *window, CGRect new_frame);
+/// @param err A pointer to an error variable to get the error code. May be null.
+///
+/// Size and position are assigned separately, so in the case that there are two errors,
+/// the last error will be returned.
+void set_window_frame(struct window *window, CGRect new_frame, enum error *err);
 
 #endif

@@ -104,9 +104,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7c11dbcb80795f96fb70051c6bfafe75"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structapplication.html">application</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8h.html#a7c11dbcb80795f96fb70051c6bfafe75">create_application</a> (pid_t pid)</td></tr>
-<tr class="memdesc:a7c11dbcb80795f96fb70051c6bfafe75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and return a pointer to an opaque application struct.  <a href="application_8h.html#a7c11dbcb80795f96fb70051c6bfafe75">More...</a><br /></td></tr>
-<tr class="separator:a7c11dbcb80795f96fb70051c6bfafe75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6f17cb26005037b038963b57a895ad"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structapplication.html">application</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8h.html#afb6f17cb26005037b038963b57a895ad">create_application</a> (pid_t pid, enum <a class="el" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> *err)</td></tr>
+<tr class="memdesc:afb6f17cb26005037b038963b57a895ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and return a pointer to an opaque application struct.  <a href="application_8h.html#afb6f17cb26005037b038963b57a895ad">More...</a><br /></td></tr>
+<tr class="separator:afb6f17cb26005037b038963b57a895ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa37ed8eeff693da110daeee0425c4760"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8h.html#aa37ed8eeff693da110daeee0425c4760">applications_equal</a> (struct <a class="el" href="structapplication.html">application</a> *a1, struct <a class="el" href="structapplication.html">application</a> *a2)</td></tr>
 <tr class="memdesc:aa37ed8eeff693da110daeee0425c4760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two applications are the same.  <a href="application_8h.html#aa37ed8eeff693da110daeee0425c4760">More...</a><br /></td></tr>
 <tr class="separator:aa37ed8eeff693da110daeee0425c4760"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,12 +151,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns true if they are the same, false if not. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if they are the same, false if not. Will also return false if either pointer is null. </dd></dl>
 
 </div>
 </div>
-<a id="a7c11dbcb80795f96fb70051c6bfafe75" name="a7c11dbcb80795f96fb70051c6bfafe75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c11dbcb80795f96fb70051c6bfafe75">&#9670;&nbsp;</a></span>create_application()</h2>
+<a id="afb6f17cb26005037b038963b57a895ad" name="afb6f17cb26005037b038963b57a895ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6f17cb26005037b038963b57a895ad">&#9670;&nbsp;</a></span>create_application()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,8 +165,18 @@ Functions</h2></td></tr>
           <td class="memname">struct <a class="el" href="structapplication.html">application</a> * create_application </td>
           <td>(</td>
           <td class="paramtype">pid_t&#160;</td>
-          <td class="paramname"><em>pid</em></td><td>)</td>
+          <td class="paramname"><em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">enum <a class="el" href="errors_8h.html#af10dacfa214e2575bb2e0ee407c242e0">error</a> *&#160;</td>
+          <td class="paramname"><em>err</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -175,6 +185,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pid</td><td>The PID to a macOS application. </td></tr>
+    <tr><td class="paramname">err</td><td>A pointer to an error variable to get the error code. May be null. </td></tr>
   </table>
   </dd>
 </dl>

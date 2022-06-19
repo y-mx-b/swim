@@ -27,7 +27,7 @@ preferred browser.
 
 - [x] Write documentation (Doxygen comments + proper documentation)
 - [x] Implement window movement and resizing
-- [ ] Rewrite library for proper error handling (you are dumb)
+- [x] Rewrite library for proper error handling (you are dumb)
 - [ ] Implement spaces support (probably not)
 - [ ] Implement modal drawing support
 - [ ] Improve memory usage, make application objects global
