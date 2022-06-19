@@ -41,5 +41,7 @@ lib:
 
 
 ### MISC
+docs:
+				doxygen
 clean:
 				rm -r .build lib
