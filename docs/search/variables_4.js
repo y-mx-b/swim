@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['including_5fwindow_0',['including_window',['../struct_window_list_options.html#a7841349c378e5c1804a69eb00b96db72',1,'WindowListOptions']]]
+  ['including_5fwindow_0',['including_window',['../structwindow__list__options.html#a9794384d320ba563516ca7a134e91e60',1,'window_list_options']]]
 ];

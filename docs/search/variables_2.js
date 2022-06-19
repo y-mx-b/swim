@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['capacity_0',['capacity',['../struct_window_list.html#a887bcd732320e64593250c2d34603efe',1,'WindowList']]],
-  ['count_1',['count',['../struct_window_list.html#a02733166eb6a1c39f443dc43acb8587c',1,'WindowList']]]
+  ['capacity_0',['capacity',['../structwindow__list.html#a4eab4605abd42439b3db4c8f67a63304',1,'window_list']]],
+  ['count_1',['count',['../structwindow__list.html#aaf788dd681fff6a6083d358d799252f0',1,'window_list']]]
 ];

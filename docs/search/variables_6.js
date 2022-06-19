@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['windows_0',['windows',['../struct_window_list.html#a17c8bdeffd0ed0c15b390c42d78ba4b8',1,'WindowList']]]
+  ['windows_0',['windows',['../structwindow__list.html#a8d7d7a7a6ba2d976086267057b8e9c95',1,'window_list']]]
 ];

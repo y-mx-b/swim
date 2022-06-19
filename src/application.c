@@ -14,12 +14,15 @@ struct application *
     return app;
 }
 
-struct application *create_application(pid_t pid) {
+struct application *create_application(pid_t pid, enum error *err) {
     AXUIElementRef ax_app = AXUIElementCreateApplication(pid);
 
     CFStringRef name;
     AXUIElementCopyAttributeValue(ax_app, kAXTitleAttribute, (CFTypeRef *) &name);
-    if (name == NULL) { return NULL; }
+    if (name == NULL) {
+        assign_error(err, NO_APPLICATION);
+        return NULL;
+    }
     name = CFStringCreateCopy(kCFAllocatorDefault, name);
 
     struct application *app = _create_application(ax_app, pid, name);
@@ -28,10 +31,13 @@ struct application *create_application(pid_t pid) {
 }
 
 bool applications_equal(struct application *a1, struct application *a2) {
+    if (a1 == NULL || a2 == NULL) { return false; }
+
     if (a1->pid == a2->pid
         && CFStringCompare(a1->name, a2->name, 0) == kCFCompareEqualTo) {
         return true;
     }
+
     return false;
 }
 

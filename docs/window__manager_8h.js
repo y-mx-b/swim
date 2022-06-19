@@ -1,7 +1,7 @@
 var window__manager_8h =
 [
-    [ "WindowListOptions", "struct_window_list_options.html", "struct_window_list_options" ],
-    [ "WindowList", "struct_window_list.html", "struct_window_list" ],
-    [ "get_window_list", "window__manager_8h.html#ae82b519049dd60b454c711b120fbbd20", null ],
-    [ "set_window_frame", "window__manager_8h.html#afa4c9ca5410c337c3ce144a418cb8433", null ]
+    [ "window_list_options", "structwindow__list__options.html", "structwindow__list__options" ],
+    [ "window_list", "structwindow__list.html", "structwindow__list" ],
+    [ "get_window_list", "window__manager_8h.html#a582c2082a767b0854778d391ca9d54d2", null ],
+    [ "set_window_frame", "window__manager_8h.html#a9d3d2d0c8433f2fb8ce48ad7e6a94921", null ]
 ];

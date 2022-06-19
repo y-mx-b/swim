@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['destroy_5fapplication_0',['destroy_application',['../application_8h.html#a7555403eeea7af1ec7fc40314add9d92',1,'application.h']]],
-  ['destroy_5fwindow_1',['destroy_window',['../window_8h.html#ac6cb2932a59065894cabf2be513e2997',1,'window.h']]]
+  ['destroy_5fapplication_0',['destroy_application',['../application_8h.html#ae916ec765ff514dffdad0e6d6a4cd05b',1,'application.h']]],
+  ['destroy_5fwindow_1',['destroy_window',['../window_8h.html#aaafce02d0e49b121edd57d6191b9948b',1,'window.h']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['above_5fwindow_0',['above_window',['../struct_window_list_options.html#aace78ae38eb11eb6e8e135772346f86e',1,'WindowListOptions']]],
-  ['all_1',['all',['../struct_window_list_options.html#a1e0bfd23a495f41fbc71b571b8ea6848',1,'WindowListOptions']]]
+  ['above_5fwindow_0',['above_window',['../structwindow__list__options.html#a891cf555918fbfbbf98952280bf5fe53',1,'window_list_options']]],
+  ['all_1',['all',['../structwindow__list__options.html#abbd259094616db4ee46cfee85b3113d6',1,'window_list_options']]]
 ];
