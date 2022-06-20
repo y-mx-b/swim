@@ -135,7 +135,7 @@ struct window *window_from_CFDictionary(CFDictionaryRef window_dict, enum error 
     return new_window;
 }
 
-bool windows_equal(struct window *w1, struct window *w2) {
+bool windows_equal(const struct window *w1, const struct window *w2) {
     if (w1 == NULL || w2 == NULL) { return false; }
 
     bool title_equality;

@@ -31,7 +31,7 @@ struct window *window_from_CFDictionary(CFDictionaryRef window_dict, enum error 
 /// @param w2 The second window.
 /// @return Returns true if they are the same, false if not. Returns false if either
 /// pointer is null.
-bool windows_equal(struct window *w1, struct window *w2);
+bool windows_equal(const struct window *w1, const struct window *w2);
 
 /// @brief Free the window struct and its contents.
 /// @param app The window to remove from memory.

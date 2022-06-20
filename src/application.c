@@ -30,7 +30,7 @@ struct application *create_application(pid_t pid, enum error *err) {
     return app;
 }
 
-bool applications_equal(struct application *a1, struct application *a2) {
+bool applications_equal(const struct application *a1, const struct application *a2) {
     if (a1 == NULL || a2 == NULL) { return false; }
 
     if (a1->pid == a2->pid

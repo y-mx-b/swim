@@ -27,7 +27,7 @@ struct application *create_application(pid_t pid, enum error *err);
 /// @param a2 The second application.
 /// @return Returns true if they are the same, false if not. Will also return false if
 /// either pointer is null.
-bool applications_equal(struct application *a1, struct application *a2);
+bool applications_equal(const struct application *a1, const struct application *a2);
 
 /// @brief Free the application struct and its contents.
 /// @param app The application to remove from memory.
